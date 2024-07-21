@@ -156,7 +156,7 @@ function editKeyword(msg) {
 	// msg.content = "/add newKeyword::New Content That Is Pretty Long::Category"
 	const keyword = msg.content.split("::")[0].split(" ").slice(1).join(" ");
 	let content = msg.content.split("::")[1];
-	const category = msg.content.split("::")[2] || "unsorted";
+	const category = msg.content.split("::")[2] || process.env.UNSORTED_CATEGORY;
 	const categoryLowerCase = category.toLowerCase();
 	if (content.startsWith("http")) {
 		if (content.startsWith("https://ctxt.io")) {
